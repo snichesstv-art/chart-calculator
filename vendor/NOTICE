@@ -1,0 +1,21 @@
+TradingView Lightweight Charts(TM) v5.2.0
+Copyright (c) 2026 TradingView, Inc. https://www.tradingview.com/
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. A copy of the License is
+in the file LICENSE next to this NOTICE, and at
+http://www.apache.org/licenses/LICENSE-2.0
+
+Files in this folder:
+  lightweight-charts.standalone.production.js
+    Copied unmodified from the npm package lightweight-charts@5.2.0
+    (dist/lightweight-charts.standalone.production.js) - the same bytes as
+    backend/workbench_app/ui/vendor (bot workbench).
+    sha256 c0992580867c4912cc9385b3c2728315bcc1a76c7f1087dca908430fccdf31d7
+  LICENSE
+    The package's LICENSE file, unmodified.
+
+Attribution: the bot cockpit keeps the library's default chart attribution
+logo (layout.attributionLogo = true), which links to https://www.tradingview.com/.
+The upstream package ships no NOTICE file; this NOTICE was written for the
+cockpit to record the origin, version and license of the bundled file.

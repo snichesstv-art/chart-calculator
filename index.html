@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="referrer" content="no-referrer">
+<title></title>
+<meta name="theme-color" content="#03050b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="cc">
+<div class="cc-app">
+  <header class="cc-top">
+    <b id="ccName" class="cc-title"></b>
+    <span class="cc-grow"></span>
+    <b id="ccPx" class="cc-px" title="지금 가격" hidden></b>
+    <span id="ccConn" class="cc-conn" title="실시간 연결">○ 연결 중</span>
+    <button type="button" id="ccTheme" class="cc-icon" data-a="theme" title="밝게 · 어둡게">◐ 자동</button>
+  </header>
+  <nav id="ccBar" class="cc-bar" aria-label="종목·시간봉"></nav>
+  <main class="cc-main">
+    <section class="cc-left" aria-label="차트와 포지션 놓기">
+      <section id="ccDisp" class="cc-disp" aria-label="요약 표시판"></section>
+      <div id="ccChart" class="cc-chart" aria-label="캔들 차트(확대·축소·이동)"><div id="ccOv" class="cc-ov"></div></div>
+      <div class="cc-tools">
+        <button type="button" class="cc-btn cc-long" data-a="arm" data-v="long">롱 놓기</button>
+        <button type="button" class="cc-btn cc-short" data-a="arm" data-v="short">숏 놓기</button>
+      </div>
+      <p id="ccHint" class="cc-hint">롱·숏을 누르고 차트를 누르면 그 가격이 진입가예요</p>
+      <p class="cc-fixed">계산·기록 도구입니다. 주문·투자 권유를 하지 않습니다.</p>
+      <div id="ccSel" class="cc-selcard" hidden></div>
+    </section>
+    <aside class="cc-right" aria-label="요약과 목록">
+      <section id="ccSum" class="cc-sum" aria-label="요약"></section>
+      <section id="ccList" class="cc-list" aria-label="놓은 포지션 목록"></section>
+      <details id="ccSet" class="cc-fold">
+        <summary id="ccSetSum">설정</summary>
+        <div class="cc-form">
+          <label>시드 <span class="cc-unit">USDT</span><input id="fSeed" type="text" inputmode="decimal" autocomplete="off"></label>
+          <label>1회 위험 <span class="cc-unit">%</span><input id="fRisk" type="text" inputmode="decimal" autocomplete="off"></label>
+          <label>레버리지 <span class="cc-unit">배 한도</span><input id="fLev" type="text" inputmode="decimal" autocomplete="off"></label>
+          <label>수수료 왕복 <span class="cc-unit">%</span><input id="fFee" type="text" inputmode="decimal" autocomplete="off"></label>
+          <label>기본 손절 거리 <span class="cc-unit">%</span><input id="fSl" type="text" inputmode="decimal" autocomplete="off"></label>
+          <label>기본 익절 거리 <span class="cc-unit">%</span><input id="fTp" type="text" inputmode="decimal" autocomplete="off"></label>
+          <div class="cc-row2"><span>캔들 색</span><button type="button" id="ccUpdown" class="cc-btn" data-a="updown">빨강 상승 · 파랑 하락</button></div>
+          <label>하루 건수 <span class="cc-unit">비우면 기록에서</span><input id="fPerDay" type="text" inputmode="decimal" autocomplete="off" placeholder="자동"></label>
+        </div>
+      </details>
+      <details class="cc-fold">
+        <summary>내보내기 · 가져오기</summary>
+        <div class="cc-io">
+          <textarea id="fIo" rows="4" spellcheck="false" aria-label="내보낸 글 · 붙여넣을 JSON 글"></textarea>
+          <div class="cc-iobtns">
+            <button type="button" class="cc-btn" data-a="export">JSON 내보내기</button>
+            <button type="button" class="cc-btn" data-a="csv">CSV 내보내기</button>
+            <button type="button" class="cc-btn" data-a="import">붙여넣은 글로 바꾸기</button>
+          </div>
+          <p id="ccIoMsg" class="cc-muted"></p>
+        </div>
+      </details>
+      <p class="cc-muted cc-note">판정: 진입가에 닿아야 체결(지정가) → 그 뒤 손절·익절 중 먼저 닿은 쪽. 한 봉 안에서 둘 다 닿으면 손절로 셈(보수적) · 체결된 봉에서는 손절만 봐요.
+        모든 숫자는 이 브라우저 안에서만 계산·저장해요(서버 없음). 시세: 바이낸스 선물 공개 시세. 차트: TradingView Lightweight Charts.</p>
+    </aside>
+  </main>
+</div>
+<script src="vendor/lightweight-charts.standalone.production.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

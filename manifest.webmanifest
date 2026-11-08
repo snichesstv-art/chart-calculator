@@ -1,0 +1,18 @@
+{
+  "name": "차트 계산기",
+  "short_name": "차트 계산기",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#03050b",
+  "background_color": "#03050b",
+  "lang": "ko",
+  "description": "차트 위에 진입·손절·익절을 놓고 손익비·평균 수익률·30일 복리를 계산하는 가벼운 계산기",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
